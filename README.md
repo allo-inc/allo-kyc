@@ -1,1 +1,1 @@
-# allo-kyc
+# Allo app

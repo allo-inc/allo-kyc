@@ -1,0 +1,425 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+
+  body {
+    @apply bg-gray-100 bg-opacity-50 text-black dark:text-white;
+    font-family: 'Source Code Pro', monospace;
+  }
+
+  p {
+    letter-spacing: 0px !important;
+  }
+
+  .btn {
+    @apply text-[14px] transition ease-in duration-150 ring-0 focus:ring-offset-0 hover:gradient--allo--bg flex gap-2 #{!important};
+  }
+
+  button {
+    .primary {
+      @apply gradient--allo--bg rounded-full;
+    }
+
+    &.btn {
+      &--filter {
+        @apply text-black font-[600] bg-purple-50 hover:bg-purple-50 ring-2 ring-purple-50 hover:ring-purple-500 ring-inset #{!important};
+      }
+    }
+  }
+
+  label {
+    @apply text-sm font-[500];
+  }
+
+  .card {
+    @apply rounded-xl p-4 lg:p-6 border shadow-sm bg-white dark:bg-gray-700;
+  }
+
+  .container {
+    @apply #{!important};
+  }
+
+  h1,
+  h2,
+  h3 {
+    // font-family: "Rubik", sans-serif;
+    @apply mb-2 font-[700];
+  }
+
+  h1 {
+    @apply text-[20px] lg:text-[46px] mb-0;
+  }
+
+  h2 {
+    @apply text-[24px] font-[700];
+  }
+
+  h3 {
+    @apply text-[20px] font-[700];
+  }
+
+  h4 {
+    @apply text-[18px] font-[600];
+    letter-spacing: 0px !important;
+  }
+
+  .focus\:ring-offset-2:focus {
+    @apply ring-none;
+  }
+
+  select,
+  .Select {
+    @apply rounded-lg p-3 border outline-none cursor-pointer #{!important};
+  }
+
+  .description {
+    @apply text-neutral-500 font-[400] text-[16px];
+  }
+
+  .gradient--allo {
+    @apply text-white from-[#F7931A] to-[#F7931A] #{!important};
+
+    &--bg {
+      @apply bg-gradient-to-r from-[#F7931A] to-[#F7931A];
+    }
+
+    &--bg--tr {
+      @apply bg-gradient-to-tr from-[#F7931A] to-[#F7931A];
+    }
+  }
+
+  .gradient--soft {
+    @apply bg-gradient-to-t from-white via-white to-[#ffe7fc];
+  }
+
+  .gradient--softer {
+    @apply bg-gradient-to-tl from-white via-white to-[#ffe7fc];
+  }
+
+  .gradient--softer--right {
+    @apply bg-gradient-to-br from-white via-white to-[#ffe7fc];
+  }
+
+  #currencyInput {
+    @apply input--currency;
+  }
+
+  .input--currency {
+    @apply outline-none shadow-none focus:shadow-none bg-transparent text-[20px] xl:text-[32px] font-[700] border-none;
+    line-height: 1 !important;
+    box-shadow: 0 !important;
+    padding: 0 !important;
+
+    &--small {
+      @apply border rounded-md w-full px-3 py-2;
+    }
+  }
+
+  .sidebar {
+    &--open {
+      @apply translate-x-[0px] delay-100;
+    }
+
+    &--closed {
+      @apply -translate-x-[300px];
+    }
+  }
+
+  thead {
+    th {
+      @apply text-black dark:text-white #{!important};
+      letter-spacing: 0px;
+    }
+  }
+
+}
+
+.table-cell {
+  font-size: 16px;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  box-shadow:
+    0 30px,
+    0 -30px;
+  border-radius: 4px;
+  background: currentColor;
+  display: block;
+  margin: -50px auto 0;
+  position: relative;
+  color: white;
+  transform: translateY(30px);
+  box-sizing: border-box;
+  animation: animloader 2s ease infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  box-shadow:
+    0 30px,
+    0 -30px;
+  border-radius: 4px;
+  background: currentColor;
+  color: white;
+  position: absolute;
+  left: 30px;
+  top: 0;
+  animation: animloader 2s 0.2s ease infinite;
+}
+
+.loader::before {
+  animation-delay: 0.4s;
+  left: 60px;
+}
+
+@keyframes animloader {
+  0% {
+    top: 0;
+    color: #ff00de;
+  }
+
+  50% {
+    top: 30px;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    top: 0;
+    color: #006aff;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    --x: 0%;
+  }
+
+  50% {
+    --x: 50%;
+  }
+
+  100% {
+    --x: 100%;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: scaleY(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleY(1.2);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scaleY(1);
+    opacity: 0.5;
+  }
+}
+
+.animate-wave {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+@keyframes gradient-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(270deg, #4a4a4a, #1a1a1a);
+  background-size: 200% 200%;
+  animation: gradient-wave 6s ease-in-out infinite;
+}
+
+.counter--box {
+  @apply flex flex-col items-center justify-center p-2 rounded-lg border border-white border-opacity-5 shadow-lg bg-white bg-opacity-10;
+  width: 80px;
+  height: 80px;
+}
+
+.counter--box p {
+  @apply text-2xl;
+}
+
+.counter--box span {
+  @apply text-xs;
+}
+
+.quill-container .ql-container {
+  border: none !important;
+}
+
+.quill-container .ql-editor {
+  padding: 0 !important;
+}
+
+.bg-light-gold-gradient {
+  border: 1px solid #F7DB8933;
+  background: linear-gradient(90deg, rgba(247, 219, 137, 0.4) 0%, rgba(247, 219, 137, 0) 25.59%);
+}
+
+.bg-light-silver-gradient {
+  border: 1px solid #CBCBCB33;
+  background: linear-gradient(90deg, rgba(203, 203, 203, 0.4) 0%, rgba(203, 203, 203, 0) 25.59%);
+}
+
+.bg-light-bronze-gradient {
+  border: 1px solid #D2A08533;
+  background: linear-gradient(90deg, rgba(210, 160, 133, 0.4) 0%, rgba(210, 160, 133, 0) 25.59%);
+}
+
+.bg-light-purple-gradient {
+  background: linear-gradient(101.18deg, rgba(137, 65, 235, 0) -10.47%, rgba(137, 65, 235, 0.2) 98.61%);
+}
+
+.bg-light-purple-gradient-revert {
+  background: linear-gradient(101.18deg, rgba(137, 65, 235, 0.2) -10.47%, rgba(137, 65, 235, 0) 98.61%);
+}
+
+.bg-purple-gradient {
+  background: radial-gradient(107.9% 265.63% at 9.93% -38.74%, #B884FF 0%, #2D0267 100%);
+}
+
+.bg-purple-img {
+  background-image: url('/backgrounds/banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(119.05deg, #122A5F -14.71%, #0467AF 101.61%);
+}
+
+.bg-green-gradient {
+  background: linear-gradient(119.05deg, #125F1A -14.71%, #04AF67 101.61%);
+}
+
+.bg-light-green-gradient {
+  background: linear-gradient(119.05deg, #0C5F65 -14.71%, #04AF9A 101.61%);
+}
+
+.bg-dark-blue-gradient {
+  background: linear-gradient(119.05deg, #26125F -14.71%, #0804AF 101.61%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(119.05deg, #5F3712 -14.71%, #BD8B0A 101.61%);
+}
+
+.bg-pink-gradient {
+  background: linear-gradient(119.05deg, #5F125C -14.71%, #AF047F 101.61%);
+}
+
+.bg-coral-gradient {
+  background: linear-gradient(119.05deg, #5F1212 -14.71%, #E65D5D 101.61%);
+}
+
+.bg-orange-gradient {
+  background: linear-gradient(119.05deg, #5F1B12 -14.71%, #AF3804 101.61%);
+}
+
+.bg-support-img {
+  background-image: url('/backgrounds/support.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tabs-container .data-\[state\=active\]\:bg-background[data-state="active"] {
+  background-color: transparent;
+}
+
+.tabs-container-primary .data-\[state\=active\]\:bg-background[data-state="active"] {
+  background-color: #fff;
+  color: #F7931A;
+}
+
+.howto {
+  img {
+    @apply border rounded overflow-hidden shadow my-4 max-w-[500px] mx-auto;
+  }
+}
