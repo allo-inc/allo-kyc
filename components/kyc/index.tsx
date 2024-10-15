@@ -12,6 +12,7 @@ import countries from "@/countries.json";
 import ButtonComponent from "../Button";
 import Upload from "../Upload";
 import { Globe } from "lucide-react";
+import { toast } from "sonner";
 
 export const CustomInput = ({
   label,
@@ -132,7 +133,9 @@ const KycPage = () => {
       </div>
       <h3 className="text-xl font-semibold">Upload documents</h3>
       <Upload data={[]} onFilesChange={(files) => console.log(files)} />
-      <ButtonComponent>Submit</ButtonComponent>
+      <ButtonComponent onClick={() => console.log("submit", profile)} disabled>
+        Submit
+      </ButtonComponent>
     </div>
   );
 };
