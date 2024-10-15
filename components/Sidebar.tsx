@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 
 import { useAppContext } from "@/app/context";
-import { alloNotionURL, publicWebUrl } from "@/config";
+import { publicWebUrl } from "@/config";
 import { LayoutDashboard, MessageCircleQuestion, X } from "lucide-react";
 import { Link } from "next-view-transitions";
 import {

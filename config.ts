@@ -1,6 +1,5 @@
 export const alloAPIUrl = process.env.NEXT_PUBLIC_ALLO_API_URL;
 export const thirdwebClientID = process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID;
-export const alloNotionURL = process.env.NEXT_PUBLIC_ALLO_NOTION_URL;
 export const publicWebUrl = "https://allo.xyz";
 export const coingeckoUrl = "https://api.coingecko.com";
 export const alloBTCWrapper = "0x343b25199727eF71B377Cfc72BD903C5328Af43C";
