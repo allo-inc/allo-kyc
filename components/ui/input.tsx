@@ -8,7 +8,7 @@ export interface InputProps
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
-      <div className="border border-white border-opacity-10 flex items-center gap-2 rounded-md overflow-hidden">
+      <div className="border border-black border-opacity-10 flex items-center gap-2 rounded-md overflow-hidden">
         {props.prefix && (
           <div className="bg-neutral-100 px-3 py-2">{props.prefix}</div>
         )}

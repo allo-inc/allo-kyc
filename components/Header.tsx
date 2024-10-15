@@ -127,23 +127,7 @@ export default function Header({ agree }: any) {
         </div>
       </div>
       <div className="flex items-center justify-end gap-2">
-        <div className="hidden md:flex gap-2">
-          <div className="flex items-center py-1 px-2 bg-white rounded-lg min-w-[100px] shadow-sm">
-            <span className="text-neutral-400">{getCurrency("BTC")}</span>
-            {loading ? (
-              <Loader2 size="18px" className="animate-spin ml-2" />
-            ) : (
-              <p className="font-semibold ml-1 text-sm">
-                {numeral(btcValue?.usd || 56450).format("$0,0")}
-              </p>
-            )}
-          </div>
-          <ChainSelection />
-          <div className={`${agree ? "" : "opacity-50 pointer-events-none"}`}>
-            <Wallet />
-          </div>
-        </div>
-        <ProfileMenu />
+        <Wallet />
       </div>
     </header>
   );
